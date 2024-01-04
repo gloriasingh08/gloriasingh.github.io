@@ -4,7 +4,7 @@
 -->
 <html>
 	<head>
-		<title>Assignment Creation - Infrastructure as Code</title>
+		<title>CodeCanvas</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,17 +16,39 @@
 			<div id="wrapper" class="divided">
 
 					<!-- One -->
-                    <section class="banner style1 orient-right content-align-left image-position-left fullscreen onload-image-fade-in onload-content-fade-left">
-                        <div class="content">
-                            <h1>Assignment Creation</h1>
-                            <p class="major"> 
-                                The application's main objective is to create and manage assignments created by authenticated users and posting assignments with input validation. The web application will load account information from a well-known location. The application should load these accounts at startup and create users based on the information provided in the CSV file. The web application’s database must be the RDS instance launched by Pulumi when running on the EC2 instance. The created assignments will be stored in AWS RDS with the database engine: MariaDB The user will provide a basic authentication token when making an API call to any authenticated endpoint. Added a GitHub Actions workflow to run the application tests for each pull request raised. A pull request can only be merged if the workflow executes successfully. Added Status Checks GitHub branch protection to prevent users from merging a pull request when the GitHub Actions workflow runs. The application has infrastructure as a code section where networking resources such as Virtual Private Cloud (VPC), Internet Gateway, Route Table, and Routes are defined, using Pulumi for infrastructure setup and tear down. The application has to build custom machine images(Amazon Machine Image) using Packer that can be used to create virtual machines in the cloud using Pulumi for Infrastructure as Code. The AMI should include everything needed to run the application including the shell script for running all the dependencies. The EC2 template for the load balancing group should be launched with user data. Doing regular health checks by Integration testing whenever there is a pull request. Route53 will be updated by Pulumi, adding different records like CNAME, TXT, and NS to the Route53 zone so that the domain points to the EC2 auto-balancing group where the web application is accessible. SSL certificates were imported for the application for secure browsing, as SSL/TLS certificates are a fundamental component of the HTTPS protocol, ensuring secure and encrypted communication between web browsers and servers. When a user is posting any assignment, the assignment status is sent to the user after successful submission and also if the URL is invalid. For sending email services the application uses Amazon SES services which will be triggered when there is a post REST API and the assignment is posted to an SNS topic in AWS, which in turn will trigger AWS lambda, and then an email will be sent using SES and also the email deliveries are stored inside dynamo db to keep track of all the emails. This part of the application uses serverless computing. The submission URLs are saved inside Google Bucket for versioning, as the same user can post many versions of the same assignment.
-                                  </p>
+                    <h1>CodeCanvas</h1>
+                    <div class="imageAcad">
+                        <img src="images/canvas.png" class="imgBorder" alt=""/>
+
+                        <div class="content details">
+                           
+                            
+                            <h3>User Authentication and Account Management</h3>
+                            <p>Users are authenticated and managed efficiently, with automatic loading of account information from a predefined location. The application validates all inputs while creating and managing assignments.</p>
+                        
+                            <h3>Database and Backend Infrastructure</h2>
+                            <p>The application uses an RDS instance, launched by Pulumi and running on MariaDB, for database management. Networking resources like VPC and Internet Gateways are defined using Pulumi, which also updates Route53 records for domain linking.</p>
+                        
+                            <h3>Code Integration and Testing</h3>
+                            <p>Includes GitHub Actions workflow for application testing on each pull request, with branch protection policies to ensure code integrity. Regular health checks and integration testing are performed to maintain application reliability.</p>
+                        
+                            <h3>Cloud Infrastructure and Custom AMI</h3>
+                            <p>Custom Amazon Machine Images (AMIs) are built using Packer, containing all necessary dependencies. These are used to create virtual machines in the cloud for the application, ensuring a scalable and resilient infrastructure.</p>
+                        
+                            <h3>Security and Compliance</h3>
+                            <p>Security is a top priority, with SSL/TLS certificates implemented for secure and encrypted communication. The application conforms to HTTPS protocol standards for safe browsing.</p>
+                        
+                            <h3>Assignment Submission and Feedback</h3>
+                            <p>Assignments are stored in AWS RDS, and the system sends status updates to users upon successful submission. It also verifies the validity of submission URLs.</p>
+                        
+                            <h3>Email Services and Serverless Computing</h3>
+                            <p>Utilizes Amazon SES for email services, triggered by REST API post requests. Integrates with AWS Lambda and SNS for efficient email delivery, with all deliveries tracked in DynamoDB. This part of the application leverages serverless computing for greater efficiency.</p>
+                        
+                            <h3>Versioning and Storage</h3>
+                            <p>For version control, submission URLs are saved in Google Bucket. This allows users to submit and manage multiple versions of the same assignment.</p>
                         </div>
-                        <div class="image img">
-                            <img src="images/cloud.png"  alt=""/>
-                        </div>
-                    </section>
+                        
+                        
 
                 <br>
                 <br>

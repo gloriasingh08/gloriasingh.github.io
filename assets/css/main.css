@@ -2627,22 +2627,36 @@ input, select, textarea {
 
 /* Image */
 
-	.image {
-		border: 0;
-		border-radius: 4px;
-		display: inline-block;
-		position: relative;
-	}
+.details{
+	text-align: center;
+	
+}
 
-		.image img {
-			display: block;
-			border-radius: 4px;
-		}
+.imgBorder{
+	border-radius: 20%;
+}
+
+.imageAcad {
+	text-align: center;
+	 /* set the div to take full height, if necessary */
+  }
+.image {
+	border: 0;
+	border-radius: 4px;
+	display: block; /* changed from inline-block for full width */
+	position: relative;
+  }
+
+	.image img {
+		display: block;
+		border-radius: 4px;
+	  }
 
 		.image.left, .image.right {
 			width: 40%;
 			max-width: 10rem;
 		}
+
 
 			.image.left img, .image.right img {
 				width: 100%;
